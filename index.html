@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Template Assinatura</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+    integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"
+    integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link rel="stylesheet" href="./style/style.css">
+  <script src="./js/index.js"></script>
+</head>
+
+<body>
+  <main>
+
+    <div id="main">
+      <div id="logo_tutorial">
+        <div id="main__image">
+          <div id="logo"></div>
+          <div id="inputfile">
+            <p id="inputfile_text" for="fileInputLogo">Adicionar Logo</p>
+            <input onchange="convertLogo()" accept="image/png, image/jpeg, image/jpg" type="file" id="fileInputLogo" />
+          </div>
+        </div>
+        <div id="main__input">
+          <select onchange="changeGroup()" type="text" id="empresa" name="empresa">
+            <option hidden>Selecione a empresa</option>
+            <option value="Empresa 1">Empresa 1</option>
+            <option value="Empresa 1">Empresa 2</option>
+          </select>
+          <input onchange="changeHTML()" type="text" id="nome" name="nome" placeholder="Digite seu nome"
+            maxlength="24" />
+          <input onchange="changeHTML()" type="email" id="emailPessoal" name="email" placeholder="Digite seu e-mail" />
+          <input onchange="changeHTML()" type="text" id="site" name="site" placeholder="Digite a url do site" />
+          <input onchange="changeHTML()" type="text" id="endereco" name="endereco"
+            placeholder="Digite o endereço da empresa" />
+            <input onchange="phoneMaskFone()" type="text" id="telefonefixo" autocomplete="off"
+            name="telefonefixo" placeholder="Digite o número de telefone" maxlength="15" />
+          <select onchange="changeHTML()" type="text" id="area" name="area">
+            <option hidden>Selecione uma área</option>
+            <option value="Área 1">Área 1</option>
+            <option value="Área 2">Área 2</option>
+            <option value="Área 3">Área 3</option>
+            <option value="Área 4">Área 4</option>
+            <option value="Área 5">Área 5</option>
+            <option value="Área 6">Área 6</option>
+            <option value="Área 7">Área 7</option>
+            <option value="Área 8">Área 8</option>
+            <option value="Área 9">Área 9</option>
+            <option value="Área 10">Área 10</option>
+          </select>
+          <div id="ramalcelular"></div>
+          <div id="ramalcelularselected"></div>
+          <input onchange="phoneMask()" type="text" id="ramal" style="display: none" autocomplete="off" name="ramal"
+            placeholder="Digite o ramal" maxlength="4" />
+          <input onchange="phoneMaskCelular()" type="text" id="celular" style="display: none" autocomplete="off"
+            name="celular" placeholder="Digite o celular" maxlength="15" />
+            <p>Redes</p>
+            <input onchange="changeHTML()" type="text" id="insta" name="insta"
+            placeholder="Digite o instagram" />
+            <input onchange="changeHTML()" type="text" id="linkedin" name="linkedin"
+            placeholder="Digite o linkedin" />
+            <input onchange="changeHTML()" type="text" id="facebook" name="facebook"
+            placeholder="Digite o facebook" />
+            <input onchange="changeHTML()" type="text" id="youtube" name="youtube"
+            placeholder="Digite o youtube" />
+            <input onchange="changeHTML()" type="text" id="twitter" name="twitter"
+            placeholder="Digite o twitter" />
+          <div id="inputfile">
+            <p id="inputfile_text" for="fileInput">Adicionar QR Code (logo abaixo está as etapas para criá-lo):</p>
+            <input onchange="convert()" accept="image/png, image/jpeg, image/jpg" type="file" id="fileInput" />
+          </div>
+          <div id="result" onclick="removeImage()"></div>
+          <button onclick="createSignature()">
+            Download do arquivo HTML
+          </button>
+        </div>
+        <div id="inputfile_link">
+          <h2>COMO GERAR UM QR CODE:</h2>
+          <p>
+            Entre no site
+            <a target="_blank" href="https://www.qrplus.com.br/">https://www.qrplus.com.br/</a>
+            e preencha os dados em "VCARD":
+          </p>
+
+          <img width="100%" src="./imagem/screenshotqrcode.png" style="padding: 5% 0" alt="screenshot-qrcode1" />
+          <p>Clique em "Gerar QR Code" e depois em "JPG". Salve a imagem em seu computador.</p>
+          <img style="width: 50%; margin: 0 25%; padding: 5% 0" src="./imagem/screenshotqrcode2.png"
+            alt="screenshot-qrcode2">
+        </div>
+      </div>
+
+      <div id="steps">
+        <h2>TUTORIAL PARA CRIAR ASSINATURA:</h2>
+        <ol>
+          <li>
+            <p>Preencha as informações no formulário</p>
+          </li>
+          <li>
+            <p>
+              Faça o download do arquivo "<span id="step">templateassinatura.htm</span>" na pasta
+              Downloads
+            </p>
+          </li>
+          <li>
+            <p>
+              Faça o download do arquivo "<span id="step">Clique aqui para configurar assinatura.bat</span>"
+            </p>
+          </li>
+          <li>
+            <p>
+              Clique no arquivo "<span id="step">Clique aqui para configurar assinatura.bat</span>"
+            </p>
+          </li>
+          <li>
+            <p>
+              Aceite a execução do arquivo mesmo que apareça como arriscado.
+            </p>
+          </li>
+          <li>
+            <p>
+              Depois da execução desse arquivo, abra o aplicativo do Outlook
+            </p>
+          </li>
+          <li>
+            <div>
+              <p>Clique em "Arquivo":</p>
+              <img src="./imagem/screenshotemail1.png" width="80%" height="auto" alt="" />
+            </div>
+          </li>
+          <li>
+            <div>
+              <p>Clique em "Opções":</p>
+              <img src="./imagem/screenshotemail2.png" width="80%" height="auto" alt="" />
+            </div>
+          </li>
+          <li>
+            <div>
+              <p>Clique em "Email" e em "Assinaturas":</p>
+              <img src="./imagem/screenshotemail3.png" width="80%" height="auto" alt="" />
+            </div>
+          </li>
+          <li>
+            <div>
+              <p style="width: 80%">
+                Clique em "templateassinatura" na opção "Selecione a
+                assinatura a ser editada", em "Novas mensagens" e em
+                "Respostas/encaminhamentos". Depois clique em "OK":
+              </p>
+              <img src="./imagem/screenshotemail4.png" width="80%" height="auto" alt="" />
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+
+    <div id="modal" onclick="document.querySelector('#modal').style.display = 'none'">
+      <img src="./imagem/modal.png" alt="">
+    </div>
+
+  </main>
+  <div id="image__signature">
+    <table class="table">
+      <tr>
+        <td>
+          <table align="center" style="width: 100%;">
+            <tr>
+              <td style="width: 40%; padding: 1% 10%" id="image__grupo">
+              </td>
+              <td style="width: 50%; padding: 0 0 0 5%">
+                <table>
+                  <tr style="margin: 0">
+                    <td>
+                      <h1 id="image__h1">Nome</h1>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p id="image__p" style="color: #6accdc;padding-left: 2%;
+                            ">Área</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p id="emailPessoal" style="color: #6accdc;padding-left: 2%;
+                            ">Email</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p id="telefonefixo" style="color: #6accdc;padding-left: 2%;
+                            ">telefonefixo</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p id="site" style="color: #6accdc;padding-left: 2%;
+                            ">Site</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p id="endereco" style="color: #6accdc;padding-left: 2%;
+                            ">Endereco</p>
+                    </td>
+                  </tr>
+                  <tr style="width: 100%; padding: 0;">
+                    <td>
+                      <table>
+                        <td style="color: #ffffff;padding-right: 5px;
+                              ">
+                          <img src="./imagem/logoTelefone.png" alt="" style="width: 20px;height: 20px;" />
+                        </td>
+                        <td>
+                          <a id="image__telefone" style="text-decoration: none; color: #ffffff;">
+                            (11) 2578-5628</a>
+                        </td>
+                        <td style="color: #ffffff; padding: 0 5px">
+                          <img src="./imagem/logoTelefone2.png" alt="" style="width: 20px;height: 20px;" />
+                        </td>
+                        <td>
+                          <a id="image__ramal" style="text-decoration: none; color: #ffffff;padding: 0"
+                            style="padding-left: 10%;">1234 </a>
+                        </td>
+                    </td>
+                </table>
+            </tr>
+            <tr>
+              <table>
+                <td>
+                <td>
+                  <img src="./imagem/logoMundo.png" alt="" style="width: 20px;height: 20px;" />
+                </td>
+                <td style="padding: 0 5px">
+                  <a style=" color: #ffffff; line-height: 30px;" id="email" href="">
+                   
+                  </a>
+                </td>
+        </td>
+    </table>
+    </tr>
+    </table>
+    <table align="center" style="padding: 0 5%;">
+      <tr>
+        <td align="center">
+        <td>
+          <img src="./imagem/logoLocal.png" alt="" style="width:20px;height: 20px;" />
+        </td>
+        <td style="padding: 0 5px">
+          <a style="text-decoration: none; color: #ffffff;" target="_blank" href="http://goo.gl/maps/c5ntV6iDwuR4A4so8">
+            Av. Paulista, 283 | Cj 141 | 14º andar | CEP:01311-000 |
+            Bela Vista - SP - Brasil
+          </a>
+        </td>
+        </td>
+      </tr>
+    </table>
+    </td>
+    </tr>
+    </table>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+    integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"
+    integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $("#celular").mask("+55 (00) 00000-0000");
+    });
+    $(document).ready(function () {
+      $("#telefonefixo").mask("+55 (00) 00000-0000");
+    });
+    const linkEditor = document.getElementById('link-editor');
+    const modal = document.getElementById('modal');
+    const closeModal = document.getElementById('close-modal');
+
+    linkEditor.addEventListener('click', function (event) {
+      event.preventDefault();
+      modal.style.display = 'block';
+    });
+
+    closeModal.addEventListener('click', function (event) {
+      modal.style.display = 'none';
+    });
+
+  </script>
+</body>
+
+
+</html>
