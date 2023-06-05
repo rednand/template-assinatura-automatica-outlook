@@ -10,3 +10,8 @@
 Página Inicial:
 
 ![image](https://github.com/rednand/template-assinatura-automatica-outlook/assets/63618987/6f85ee15-f9e3-418f-b83d-4b098b827459)
+
+Assinatura configurada: 
+
+![image](https://github.com/rednand/template-assinatura-automatica-outlook/assets/63618987/10dc4424-0a44-49df-b6a6-8b3d62095d5c)
+
