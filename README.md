@@ -15,3 +15,6 @@ Assinatura configurada:
 
 ![image](https://github.com/rednand/template-assinatura-automatica-outlook/assets/63618987/10dc4424-0a44-49df-b6a6-8b3d62095d5c)
 
+<hr/>
+<br/>
+OBS: outras configurações podem ser implementadas futuramente, como escolher cores e tamanho.
